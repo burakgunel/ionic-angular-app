@@ -1,5 +1,9 @@
-apply plugin: 'com.android.application'
 
+plugins {
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+    // Other plugins here if pre-existing
+    id 'com.android.application'
+}
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
@@ -18,6 +22,8 @@ android {
     }
 }
 
+
+
 repositories {
     flatDir{
         dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
@@ -32,6 +38,8 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
     implementation project(':capacitor-cordova-android-plugins')
+    implementation platform('com.google.firebase:firebase-bom:26.1.1')
+     implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
 }
 
 apply from: 'capacitor.build.gradle'
