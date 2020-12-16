@@ -24,10 +24,8 @@ export class MessagePage  {
     console.log(sendMessageRequest);
     this.messageService.SendMessage(sendMessageRequest).subscribe((response) => {
       if(response.success){
-        this.messageInput.value = "";
-        alert("Message send successfully");
+        window.location.reload();
       }
-      
     })
   }
 }
