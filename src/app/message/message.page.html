@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My Message List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Messages</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item>
+      
+      <ion-textarea placeholder="Enter the message here ..." #message></ion-textarea>
+      
+      <ion-button (click)="onSendMessage(message.value)">SEND</ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
